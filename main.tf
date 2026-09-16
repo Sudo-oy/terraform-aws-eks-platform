@@ -20,7 +20,7 @@ locals {
 
   tags = merge(
     {
-      "terraform-module" = "eks-terraform-iac"
+      "terraform-module" = "terraform-aws-eks-platform"
       "cluster"          = var.name
     },
     var.tags,
