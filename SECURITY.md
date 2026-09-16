@@ -10,7 +10,7 @@ Only the latest release (or the `main` branch before the first release) receives
 
 Report vulnerabilities privately through GitHub:
 
-1. Go to the **Security** tab of [Sudo-oy/eks-terraform-iac](https://github.com/Sudo-oy/eks-terraform-iac/security).
+1. Go to the **Security** tab of [Sudo-oy/terraform-aws-eks-platform](https://github.com/Sudo-oy/terraform-aws-eks-platform/security).
 2. Click **Report a vulnerability** and describe the issue, the affected version or commit, and the steps to reproduce.
 
 You can expect:

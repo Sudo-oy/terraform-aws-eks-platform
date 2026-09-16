@@ -1,8 +1,8 @@
-# eks-terraform-iac
+# terraform-aws-eks-platform
 
 **A production-minded Terraform module that ships an Amazon EKS cluster, its VPC, ECR repositories and an optional private PostgreSQL database in a single `module` block.**
 
-[![CI](https://github.com/Sudo-oy/eks-terraform-iac/actions/workflows/ci.yml/badge.svg)](https://github.com/Sudo-oy/eks-terraform-iac/actions/workflows/ci.yml)
+[![CI](https://github.com/Sudo-oy/terraform-aws-eks-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Sudo-oy/terraform-aws-eks-platform/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%89%A5%201.9-7B42BC?logo=terraform)](https://developer.hashicorp.com/terraform)
 [![AWS provider](https://img.shields.io/badge/AWS%20provider-6.x-FF9900?logo=amazonaws)](https://registry.terraform.io/providers/hashicorp/aws/latest)
@@ -56,7 +56,7 @@ flowchart TB
 Deploy the [basic example](examples/basic) (an EKS cluster, one ECR repository and PostgreSQL) with your AWS credentials loaded:
 
 ```bash
-git clone https://github.com/Sudo-oy/eks-terraform-iac.git && cd eks-terraform-iac/examples/basic
+git clone https://github.com/Sudo-oy/terraform-aws-eks-platform.git && cd terraform-aws-eks-platform/examples/basic
 terraform init
 terraform apply
 ```
@@ -69,7 +69,7 @@ Then run the command printed in the `kubeconfig_command` output and `kubectl get
 
 ```hcl
 module "eks" {
-  source = "github.com/Sudo-oy/eks-terraform-iac?ref=v0.1.0"
+  source = "github.com/Sudo-oy/terraform-aws-eks-platform?ref=v0.1.0"
 
   name               = "platform-dev"
   kubernetes_version = "1.34"
@@ -103,7 +103,7 @@ Using an existing VPC:
 
 ```hcl
 module "eks" {
-  source = "github.com/Sudo-oy/eks-terraform-iac?ref=v0.1.0"
+  source = "github.com/Sudo-oy/terraform-aws-eks-platform?ref=v0.1.0"
 
   name               = "platform-prod"
   create_vpc         = false

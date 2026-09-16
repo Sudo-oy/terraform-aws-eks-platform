@@ -1,4 +1,4 @@
-# Contributing to eks-terraform-iac
+# Contributing to terraform-aws-eks-platform
 
 Thanks for your interest in improving this module! Every contribution is welcome: bug reports, documentation fixes, new examples or new features.
 
