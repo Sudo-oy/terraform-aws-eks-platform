@@ -1,0 +1,21 @@
+# Checkov configuration. Every skipped check is documented below.
+compact: true
+quiet: true
+framework:
+  - terraform
+skip-path:
+  - .terraform
+  - examples/basic/.terraform
+skip-check:
+  # Registry modules are pinned to an exact version; the Terraform Registry does not support commit-hash sources.
+  - CKV_TF_1
+  # Multi-AZ doubles the cost; it is opt-in through `postgres_multi_az`.
+  - CKV_AWS_157
+  # Performance Insights is not available on every burstable class; it is opt-in through `postgres_performance_insights_enabled`.
+  - CKV_AWS_353
+  # Deletion protection is enabled by default; only the disposable example turns it off.
+  - CKV_AWS_293
+  # False positive: the security group is attached to the RDS instance through `vpc_security_group_ids` (count-based resources).
+  - CKV2_AWS_5
+  # Requires `log_statement = all`, which is too verbose for production. The module logs DDL and slow queries instead.
+  - CKV2_AWS_30
