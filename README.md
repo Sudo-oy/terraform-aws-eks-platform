@@ -3,6 +3,7 @@
 **A production-minded Terraform module that ships an Amazon EKS cluster, its VPC, ECR repositories and an optional private PostgreSQL database in a single `module` block.**
 
 [![CI](https://github.com/Sudo-oy/terraform-aws-eks-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Sudo-oy/terraform-aws-eks-platform/actions/workflows/ci.yml)
+[![Terraform Registry](https://img.shields.io/badge/Terraform_Registry-Sudo--oy%2Feks--platform%2Faws-7B42BC?logo=terraform)](https://registry.terraform.io/modules/Sudo-oy/eks-platform/aws/latest)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%89%A5%201.9-7B42BC?logo=terraform)](https://developer.hashicorp.com/terraform)
 [![AWS provider](https://img.shields.io/badge/AWS%20provider-6.x-FF9900?logo=amazonaws)](https://registry.terraform.io/providers/hashicorp/aws/latest)
@@ -69,7 +70,8 @@ Then run the command printed in the `kubeconfig_command` output and `kubectl get
 
 ```hcl
 module "eks" {
-  source = "github.com/Sudo-oy/terraform-aws-eks-platform?ref=v0.1.0"
+  source  = "Sudo-oy/eks-platform/aws"
+  version = "~> 0.1"
 
   name               = "platform-dev"
   kubernetes_version = "1.34"
@@ -103,7 +105,8 @@ Using an existing VPC:
 
 ```hcl
 module "eks" {
-  source = "github.com/Sudo-oy/terraform-aws-eks-platform?ref=v0.1.0"
+  source  = "Sudo-oy/eks-platform/aws"
+  version = "~> 0.1"
 
   name               = "platform-prod"
   create_vpc         = false
